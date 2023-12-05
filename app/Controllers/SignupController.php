@@ -34,10 +34,13 @@ class SignupController extends Controller
                 'password' => password_hash($this->request->getVar('password'), PASSWORD_DEFAULT)
             ];
             $userModel->save($data);
-            return redirect()->to('/signin');
+            return redirect()->to('signin');
         }else{
             $data['validation'] = $this->validator;
-            echo view('signup', $data);
+            //echo view('signup', $data);
+            echo view('common/header');
+             echo view('signup', $data);
+            return view('common/footer');
         }
           
     }
