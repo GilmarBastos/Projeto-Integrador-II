@@ -28,7 +28,14 @@ class ProfileController extends Controller
                 'situacao'    => $this->request->getVar('situacao')
             ];
             $etariaModel->save($data);
-            return redirect()->to('/');
+
+            return redirect()->to('mensagem')->with('mensagem',[
+                'mensagem' => 'Sua pesquisa de idade foi enviada com sucesso',
+                'tipo' => 'success'
+            ]);
+
+            //return redirect()->to('/');
+
         }else{
             $data['validation'] = $this->validator;
             echo view('profile', $data);

@@ -60,8 +60,6 @@ class SendMail extends Controller
                 'mensagem' => 'Erro ao tentar enviar Email, tente mais tarde...',
                 'tipo' => 'danger'
             ]);
-            // $data = $email->printDebugger(['headers']);
-            // print_r($data);
         }
     }
 }
