@@ -33,9 +33,6 @@ class ProfileController extends Controller
                 'mensagem' => 'Sua pesquisa de idade foi enviada com sucesso',
                 'tipo' => 'success'
             ]);
-
-            //return redirect()->to('/');
-
         }else{
             $data['validation'] = $this->validator;
             echo view('profile', $data);
